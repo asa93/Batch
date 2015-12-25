@@ -1,0 +1,264 @@
+<?php
+
+/* BDEShowcaseBundle:Default:associations.html.twig */
+class __TwigTemplate_435d230de5638bfa129748688a1940b527a93e8d4f36a090699418e859b72711 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("BDEShowcaseBundle::main-layout.html.twig", "BDEShowcaseBundle:Default:associations.html.twig", 1);
+        $this->blocks = array(
+            'body' => array($this, 'block_body'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "BDEShowcaseBundle::main-layout.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_0b02e709e8fa14c9845a92ff7f8dd0042487c901dae1da3602063edf34cc1833 = $this->env->getExtension("native_profiler");
+        $__internal_0b02e709e8fa14c9845a92ff7f8dd0042487c901dae1da3602063edf34cc1833->enter($__internal_0b02e709e8fa14c9845a92ff7f8dd0042487c901dae1da3602063edf34cc1833_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BDEShowcaseBundle:Default:associations.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_0b02e709e8fa14c9845a92ff7f8dd0042487c901dae1da3602063edf34cc1833->leave($__internal_0b02e709e8fa14c9845a92ff7f8dd0042487c901dae1da3602063edf34cc1833_prof);
+
+    }
+
+    // line 3
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_fc3d399ba47b3521a914f5a6fe3d0324231aaee2e5187b0527b7cf9c7ba21b7c = $this->env->getExtension("native_profiler");
+        $__internal_fc3d399ba47b3521a914f5a6fe3d0324231aaee2e5187b0527b7cf9c7ba21b7c->enter($__internal_fc3d399ba47b3521a914f5a6fe3d0324231aaee2e5187b0527b7cf9c7ba21b7c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 4
+        echo "
+<article>\t
+\t<h2> Les associations:     donner    pour    recevoir</h2>
+\t\t<p> Les associations sont un passage inévitable pour tout étudiant de l'école.
+\t\tDès la première année on est poussé à rejoindre des associations et mener des projets avec d'autres élèves.
+\t\tDe nombreuses amitié solides se sont liées en travaillant coude à coude.
+\t\tEn bref, ce sont des moments qui peuvent être très forts avec à la clé, beaucoup de souvenirs et plein de goodies!<br />
+\t\tDans le cadre du Projet d'Engagement Sociétal tout le monde doit s'engager dans une association mais il est également
+\t\tpossible de rejoindre des bureaux d'élèves et des clubs sportifs. Mais il est également possible de créer son propre
+\t\tclub! A ton tour peut-être? N'hésite pas à nous contacter si tu as une idée et on pourra t'aider à concrétiser ton projet
+\t\t,qui sait?  </p>
+\t\t
+\t<h2> Listing    des      associations </h2>
+\t\t<p>
+\t\tLes associations sont présentées en début d'année mais en voici une liste exhaustive avec les coordonnées des responsables actuels
+\t\tet le lien du site si disponible. <br /></p>
+\t\t
+\t\t<h3>Ac'Educ</h3>
+
+<p>
+Ac'Educ est une association ayant pour projet de développer l'enseignement au Burkina Faso.
+Une vingtaine d'élèves organise une série de manifestations durant l'année afin de lever des fonds pour développer la branche Génie Electronique de l'Ecole Supérieure Polytechnique de Kaya (E.S.P.K.).
+Par ailleurs, une collecte de vêtements et de fournitures scolaires a lieu chaque année, pour aider l'association Arc-en-ciel*Egalité des Chances, qui soutient des orphelins ou des enfants de parents démunis, de la maternelle
+à la classe de première.
+Une mission est organisée chaque été, afin de réceptionner et installer le matériel envoyé à l'E.S.P.K. dans un premier temps, et pour ensuite donner des cours aux élèves de l'école et de l'association Arc-en-ciel*Egalité des Chances.
+
+Le principal objectif de l'année 2013 est d'installer une pompe solaire à l'E.S.P.K., permettant de réduire les dépenses de l'école.
+<br />
+Contacter Ac'Educ : all-aceduc@mines-nantes.fr<br />
+Site internet : http://www.aceduc.org
+</p>
+
+
+<h3>Mind</h3>
+<p>
+Vous souhaitez découvrir la gestion d'entreprise en étant un membre actif d'une véritable entreprise, MiND est fait pour vous. C'est la Junior-Entreprise de l'école. Faire partie de MiND vous permettra d'accéder à un véritable poste tel que président, comptable, secrétaire général ou commercial. Nous sommes un bureau d'étude qui propose à des entreprises de faire réaliser des projets par les élèves de l'école. En rejoignant notre Junior-Entreprise vous pourrez accéder au poste de chef de projet intervenant comme l'intermédiaire MiND-entreprise. MiND réalise plusieurs types de projet avec de grandes entreprises comme des sites internets ou encore des projets d'optimisation des consommations d'énergie et de recherche de solutions alternatives de production d'énergie.
+<br />
+Contacter Mind : mind@mines-nantes.fr <br />
+Site internet : http://www.mind-services.fr
+</p>
+
+
+<h3>Eki'Libre</h3>
+<p>
+Née en 2009 de la fusion entre le Club Développement Durable et l'association Eki'Table, l'association Eki'Libre, a pour mission de promouvoir le développement durable à l'École des Mines de Nantes par le biais de nombreux projets en partenariat avec l'école comme l'organisation de films et débats sur des thèmes de société et d'environnement, des ventes de produits locaux, de la sensibilisation à l'importance de l'énergie ou encore l'installation d'un composteur et un jardin bio en 2013. En 2011, Eki'Libre a installé des ruches sur le campus de l'école. L'association fait actuellement partie de divers réseaux étudiants comme le REFEDD ou encore Animafac.
+<br />
+Contacter Eki'Libre : ekilibre@mines-nantes.fr <br />
+Site internet : https://sites.google.com/site/ekilibremn/home
+</p>
+
+
+<h3>Brio</h3>
+<p>
+Depuis l'automne 2006, Audencia et Centrale Nantes, rejoints en 2009 par Oniris puis l'Ecole des Mines de Nantes, ont lancé un programme d'ouverture sociale qui repose sur l'engagement d'étudiants tuteurs. BRIO (« fais un Bond pour la Réussite par l'Initiative et l'Ouverture ») s'adresse à des lycéens de 1ère et de terminale issus de milieux modestes ou défavorisés. Il s'agit de les accompagner sur deux axes de développement personnel : l'ouverture culturelle et les choix d'orientation, en les encourageant à construire un projet d'études supérieures.
+Les étudiants tuteurs impliqués dans le programme prennent la responsabilité bénévole d'une équipe de 4 à 6 lycéens en binôme avec un(e) étudiant(e) d'Oniris. L'accompagnement des lycéens se fait sur deux ans au cours d'ateliers qui ont lieu un mercredi après-midi sur deux, de sorties culturelles et de visites d'entreprises. Si vous voulez développer des compétences d'animation, de logistique et de conduite de projet tout en tissant des liens privilégiés avec des lycéens volontaires et motivés, rejoignez-nous !
+<br />
+Contacter Brio : brio@mines-nantes.fr <br />
+Site internet : http://www.brio-nantes.org/
+</p>
+
+
+<h3>Forum Atlantique</h3>
+
+
+<p>L'association Forum Atlantique est composée d'élèves des six écoles d'ingénieurs nantaises : Centrale, Oniris-agro, Polytech, l'ICAM, l'Ecole du Bois et bien sûr l'Ecole des Mines !
+Envie d'organiser un évènement ambitieux, de travailler avec des étudiants d'autres écoles, de négocier avec des fournisseurs, contacter des entreprises et d'autres choses encore...
+
+Alors viens faire partie de l'équipe du Forum Atlantique, qui aura lieu le Mercredi 13 Novembre à la Cité Nantes Events Center ! Tu participeras à l'organisation du plus grand forum de rencontre étudiants/entreprises de l'Ouest, ce sera aussi l'occasion de mettre un pied dans la vie professionnelle en nouant des contacts privilégiés avec de nombreuses entreprises.
+
+Tu as des questions ? Tu veux rejoindre l'association ? N'hésite pas à nous contacter !
+<br />
+Contacter Forum Atlantique : relations.ecoles@forumatlantique.ec-nantes.fr<br />
+Site internet : www.forumatlantique.fr
+</p>
+
+
+
+<h3>Les mines du coeur</h3>
+
+<p>
+Née en 2012, les mines du coeur est l'association du bénévolat de l'EMN, travaillant dans le social. Venez apporter votre aide et réconfort aux personnes démunies, en difficulté financière et/ou sociale du grand Nantes. Encadrés par des membres de l'organisation des restaurants du cour, nous servons des repas un soir par semaine. Nous organisons également l'année durant des collectes au sein de l'école, ainsi que des opérations de sensibilisation. Motivé(e) ? Vous êtes le/la bienvenu(e).
+<br />
+Contacter Les mines du coeur : minescoeur@minesnantes.fr
+
+\t\t</p>
+\t\t
+\t<h2>    Les     clubs     sportifs     </h2>
+\t\t<p>
+\t\t</p>
+\t\t
+\t<h2> Les     bureaux     d'eleves </h2>
+\t\t<h3> Prendre part à la vie de l'école </h3>
+\t\t\t<p>
+\t\t\t
+\t\t\t</p>
+\t\t<h3> Les campagnes, un moment fort </h3>
+\t\t\t<p>
+\t\t\t</p>
+</article>
+\t
+";
+        
+        $__internal_fc3d399ba47b3521a914f5a6fe3d0324231aaee2e5187b0527b7cf9c7ba21b7c->leave($__internal_fc3d399ba47b3521a914f5a6fe3d0324231aaee2e5187b0527b7cf9c7ba21b7c_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "BDEShowcaseBundle:Default:associations.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  40 => 4,  34 => 3,  11 => 1,);
+    }
+}
+/* {%extends 'BDEShowcaseBundle::main-layout.html.twig' %}*/
+/* */
+/* {%block body%}*/
+/* */
+/* <article>	*/
+/* 	<h2> Les associations:     donner    pour    recevoir</h2>*/
+/* 		<p> Les associations sont un passage inévitable pour tout étudiant de l'école.*/
+/* 		Dès la première année on est poussé à rejoindre des associations et mener des projets avec d'autres élèves.*/
+/* 		De nombreuses amitié solides se sont liées en travaillant coude à coude.*/
+/* 		En bref, ce sont des moments qui peuvent être très forts avec à la clé, beaucoup de souvenirs et plein de goodies!<br />*/
+/* 		Dans le cadre du Projet d'Engagement Sociétal tout le monde doit s'engager dans une association mais il est également*/
+/* 		possible de rejoindre des bureaux d'élèves et des clubs sportifs. Mais il est également possible de créer son propre*/
+/* 		club! A ton tour peut-être? N'hésite pas à nous contacter si tu as une idée et on pourra t'aider à concrétiser ton projet*/
+/* 		,qui sait?  </p>*/
+/* 		*/
+/* 	<h2> Listing    des      associations </h2>*/
+/* 		<p>*/
+/* 		Les associations sont présentées en début d'année mais en voici une liste exhaustive avec les coordonnées des responsables actuels*/
+/* 		et le lien du site si disponible. <br /></p>*/
+/* 		*/
+/* 		<h3>Ac'Educ</h3>*/
+/* */
+/* <p>*/
+/* Ac'Educ est une association ayant pour projet de développer l'enseignement au Burkina Faso.*/
+/* Une vingtaine d'élèves organise une série de manifestations durant l'année afin de lever des fonds pour développer la branche Génie Electronique de l'Ecole Supérieure Polytechnique de Kaya (E.S.P.K.).*/
+/* Par ailleurs, une collecte de vêtements et de fournitures scolaires a lieu chaque année, pour aider l'association Arc-en-ciel*Egalité des Chances, qui soutient des orphelins ou des enfants de parents démunis, de la maternelle*/
+/* à la classe de première.*/
+/* Une mission est organisée chaque été, afin de réceptionner et installer le matériel envoyé à l'E.S.P.K. dans un premier temps, et pour ensuite donner des cours aux élèves de l'école et de l'association Arc-en-ciel*Egalité des Chances.*/
+/* */
+/* Le principal objectif de l'année 2013 est d'installer une pompe solaire à l'E.S.P.K., permettant de réduire les dépenses de l'école.*/
+/* <br />*/
+/* Contacter Ac'Educ : all-aceduc@mines-nantes.fr<br />*/
+/* Site internet : http://www.aceduc.org*/
+/* </p>*/
+/* */
+/* */
+/* <h3>Mind</h3>*/
+/* <p>*/
+/* Vous souhaitez découvrir la gestion d'entreprise en étant un membre actif d'une véritable entreprise, MiND est fait pour vous. C'est la Junior-Entreprise de l'école. Faire partie de MiND vous permettra d'accéder à un véritable poste tel que président, comptable, secrétaire général ou commercial. Nous sommes un bureau d'étude qui propose à des entreprises de faire réaliser des projets par les élèves de l'école. En rejoignant notre Junior-Entreprise vous pourrez accéder au poste de chef de projet intervenant comme l'intermédiaire MiND-entreprise. MiND réalise plusieurs types de projet avec de grandes entreprises comme des sites internets ou encore des projets d'optimisation des consommations d'énergie et de recherche de solutions alternatives de production d'énergie.*/
+/* <br />*/
+/* Contacter Mind : mind@mines-nantes.fr <br />*/
+/* Site internet : http://www.mind-services.fr*/
+/* </p>*/
+/* */
+/* */
+/* <h3>Eki'Libre</h3>*/
+/* <p>*/
+/* Née en 2009 de la fusion entre le Club Développement Durable et l'association Eki'Table, l'association Eki'Libre, a pour mission de promouvoir le développement durable à l'École des Mines de Nantes par le biais de nombreux projets en partenariat avec l'école comme l'organisation de films et débats sur des thèmes de société et d'environnement, des ventes de produits locaux, de la sensibilisation à l'importance de l'énergie ou encore l'installation d'un composteur et un jardin bio en 2013. En 2011, Eki'Libre a installé des ruches sur le campus de l'école. L'association fait actuellement partie de divers réseaux étudiants comme le REFEDD ou encore Animafac.*/
+/* <br />*/
+/* Contacter Eki'Libre : ekilibre@mines-nantes.fr <br />*/
+/* Site internet : https://sites.google.com/site/ekilibremn/home*/
+/* </p>*/
+/* */
+/* */
+/* <h3>Brio</h3>*/
+/* <p>*/
+/* Depuis l'automne 2006, Audencia et Centrale Nantes, rejoints en 2009 par Oniris puis l'Ecole des Mines de Nantes, ont lancé un programme d'ouverture sociale qui repose sur l'engagement d'étudiants tuteurs. BRIO (« fais un Bond pour la Réussite par l'Initiative et l'Ouverture ») s'adresse à des lycéens de 1ère et de terminale issus de milieux modestes ou défavorisés. Il s'agit de les accompagner sur deux axes de développement personnel : l'ouverture culturelle et les choix d'orientation, en les encourageant à construire un projet d'études supérieures.*/
+/* Les étudiants tuteurs impliqués dans le programme prennent la responsabilité bénévole d'une équipe de 4 à 6 lycéens en binôme avec un(e) étudiant(e) d'Oniris. L'accompagnement des lycéens se fait sur deux ans au cours d'ateliers qui ont lieu un mercredi après-midi sur deux, de sorties culturelles et de visites d'entreprises. Si vous voulez développer des compétences d'animation, de logistique et de conduite de projet tout en tissant des liens privilégiés avec des lycéens volontaires et motivés, rejoignez-nous !*/
+/* <br />*/
+/* Contacter Brio : brio@mines-nantes.fr <br />*/
+/* Site internet : http://www.brio-nantes.org/*/
+/* </p>*/
+/* */
+/* */
+/* <h3>Forum Atlantique</h3>*/
+/* */
+/* */
+/* <p>L'association Forum Atlantique est composée d'élèves des six écoles d'ingénieurs nantaises : Centrale, Oniris-agro, Polytech, l'ICAM, l'Ecole du Bois et bien sûr l'Ecole des Mines !*/
+/* Envie d'organiser un évènement ambitieux, de travailler avec des étudiants d'autres écoles, de négocier avec des fournisseurs, contacter des entreprises et d'autres choses encore...*/
+/* */
+/* Alors viens faire partie de l'équipe du Forum Atlantique, qui aura lieu le Mercredi 13 Novembre à la Cité Nantes Events Center ! Tu participeras à l'organisation du plus grand forum de rencontre étudiants/entreprises de l'Ouest, ce sera aussi l'occasion de mettre un pied dans la vie professionnelle en nouant des contacts privilégiés avec de nombreuses entreprises.*/
+/* */
+/* Tu as des questions ? Tu veux rejoindre l'association ? N'hésite pas à nous contacter !*/
+/* <br />*/
+/* Contacter Forum Atlantique : relations.ecoles@forumatlantique.ec-nantes.fr<br />*/
+/* Site internet : www.forumatlantique.fr*/
+/* </p>*/
+/* */
+/* */
+/* */
+/* <h3>Les mines du coeur</h3>*/
+/* */
+/* <p>*/
+/* Née en 2012, les mines du coeur est l'association du bénévolat de l'EMN, travaillant dans le social. Venez apporter votre aide et réconfort aux personnes démunies, en difficulté financière et/ou sociale du grand Nantes. Encadrés par des membres de l'organisation des restaurants du cour, nous servons des repas un soir par semaine. Nous organisons également l'année durant des collectes au sein de l'école, ainsi que des opérations de sensibilisation. Motivé(e) ? Vous êtes le/la bienvenu(e).*/
+/* <br />*/
+/* Contacter Les mines du coeur : minescoeur@minesnantes.fr*/
+/* */
+/* 		</p>*/
+/* 		*/
+/* 	<h2>    Les     clubs     sportifs     </h2>*/
+/* 		<p>*/
+/* 		</p>*/
+/* 		*/
+/* 	<h2> Les     bureaux     d'eleves </h2>*/
+/* 		<h3> Prendre part à la vie de l'école </h3>*/
+/* 			<p>*/
+/* 			*/
+/* 			</p>*/
+/* 		<h3> Les campagnes, un moment fort </h3>*/
+/* 			<p>*/
+/* 			</p>*/
+/* </article>*/
+/* 	*/
+/* {% endblock %}*/

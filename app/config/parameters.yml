@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: mysqli
+    database_host: db554869185.db.1and1.com
+    database_port: 3306
+    database_name: db554869185
+    database_user: dbo554869185
+    database_password: dudul_303
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: asa93@live.fr
+    mailer_password: purplePain_303
+    locale: fr
+    secret: ThisTokenIsNotSoSecretChangeIt
