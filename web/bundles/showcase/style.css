@@ -1,0 +1,200 @@
+ @font-face {
+    font-family: fontTitle;
+    src: url("fonts/bebas.ttf");
+}
+ 
+ @font-face{
+	font-family: fontMenu;
+	src: url("fonts/grotesk.otf");
+ }
+ @font-face{
+	font-family:mainFont;
+	src: url("fonts/sansation.ttf");
+ }
+ #gallerie{
+	width:100%;
+	background-color:black;
+	color:white;
+ }
+ 
+ #mainMenu, #mainMenu ul{
+
+font-family: fontMenu, Helvetica, Trebuchet MS;
+
+margin-top:0px;
+margin-bottom:0px;
+}
+#logoEMN{
+position:absolute;
+right:10px;
+top:10px;
+}
+article img{
+	box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+}
+html, body {
+ margin:0;
+ padding:0;
+ }
+body
+{
+		font-family: mainFont, Calibri;
+		background-color:#f1f1f1;
+}
+header, article, #mainMenu, ul{
+	margin-left:auto;
+	margin-right:auto;
+
+	
+}
+article{
+width:60%;
+box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
+background-color:white;
+
+padding-bottom:10px;
+}
+header
+{
+	height:250px;
+	
+}
+header a{
+	display:block;
+	width:242px;
+	height:242px;
+	margin:auto;
+	
+}
+
+#home img{
+display:inline;
+float:left;}
+  #mainMenu{
+  border-top: 4px grey solid;
+	height:45px;
+	padding:0px;
+	text-align:center;
+	font-family: Helvetica, Trebuchet MS;
+	background: url("pics/design/backgroundNav.png") repeat-x;
+	
+	
+	}
+	#mainMenu ul{
+	height:45px;}
+#mainMenu ul li{
+	
+	height:45px;
+	display:inline-block;
+	margin-right:-5px;
+	border-right: 1px silver solid;
+	
+	
+	
+}
+
+#mainMenu ul li a, #mainMenu ul li a:visited{
+	display:inline-block;
+	height:45px;
+	text-decoration:none;
+	padding-left:10px;
+	padding-right:2px;
+	color:white;
+	
+	
+}
+#events{
+	margin:auto;
+	width:95%
+}
+#mainMenu ul li p{
+	margin:center;
+}
+#mainMenu ul li a:hover{
+	background: url("pics/design/backgroundNav-hover.png") repeat-x;
+}
+  h1,h2{
+
+	height:45px;
+	display:block;
+	width:100%;
+	text-align:center;
+	color:#fffad0;
+	
+	background: url("pics/design/titleRibbon.png") repeat-x;
+  font-family: fontTitle, Helvetica;
+  text-shadow: 2px 2px 2px black;
+  }
+  h1 a:visited, h2 a:visited{
+	text-decoration:none;
+	color:#fffad0;
+  }
+  h1{
+	font-size:1.6em;
+
+  }
+  h2{
+  font-size:1.3em;}
+ 
+ article p, article h3{
+	margin:10px;
+ }
+ 
+footer{
+	text-align:center;
+	height:220px;
+	background-color:grey;
+	border-top: silver 4px solid;
+	color:white;
+	width:100%;
+	margin:0px;
+
+	
+}
+footer p{
+background:none;
+text-shadow: 2px 2px 2px black;
+}
+footer li{
+	display:inline-block;
+}
+
+#shortMenu{
+	position:absolute;
+	top:0px;
+	left:0px;
+	margin-left:0px;
+	padding:0px;
+	
+}
+#shortMenu ul{
+	margin:0px;
+	padding:0px;
+	width:108px;
+	margin-left:-3px;
+}
+#shortMenu ul li{
+	width:108px;
+	height:36px;
+	margin-bottom:-5px;
+	
+}
+#shortMenu ul #sideRibbon1{
+	background: url("pics/design/sideRibbon.png")  no-repeat;
+}
+#shortMenu ul #sideRibbon2{
+	background: url("pics/design/sideRibbonOutils.png") no-repeat;
+}
+#shortMenu ul #sideRibbon3{
+	background: url("pics/design/sideRibbonTutoriel.png") no-repeat;
+}
+#shortMenu ul #sideRibbon4{
+	background: url("pics/design/sideRibbonAdmin.png") no-repeat;
+}
+#shortMenu a, #shortMenu a:visited{
+	display:block;
+	width:108px;
+	height:36px;
+	text-decoration:none;
+
+}
