@@ -1,0 +1,3 @@
+-> fixer prix en fonction de l'âge et le donner à l'avance
+-> recherche: ajouter paramètre de temps genre SEMAINE
+-> ajouter paramètre mon âge

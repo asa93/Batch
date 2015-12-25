@@ -1,0 +1,25 @@
+<!DOCTYPE html>  
+<html class="no-js" lang="fr" >
+    <head>
+        <meta charset="utf-8" />
+		<script src="scripts/less.min.js" type="text/javascript" ></script>
+		
+		
+		<script src="{{ asset('bundles/showcase/scripts/jquery-1.11.2.js')}}" type="text/javascript"></script>
+		<script src="{{asset('bundles/showcase/scripts/script.js')}}" type="text/javascript"></script>
+		<script src="{{asset('bundles/showcase/scripts/less.min.js')}}" type="text/javascript"></script>
+		
+		<link rel="stylesheet" href="{{ asset('bundles/showcase/style.css') }}" />
+
+        <title>Accueil</title>
+    </head>
+
+    <body>
+	 {% include 'BDEShowcaseBundle:Default:header.html.twig'%}
+		{%block body%}
+		
+		{%endblock %}
+
+    {% include 'BDEShowcaseBundle:Default:footer.html.twig' %}
+    </body>
+</html>

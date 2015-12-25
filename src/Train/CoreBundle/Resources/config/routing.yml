@@ -1,0 +1,27 @@
+train_core_homepage:
+    path:     /index
+    defaults: { _controller: TrainCoreBundle:Default:index }
+train_core_inscription:
+    path:     /inscription
+    defaults: { _controller: TrainCoreBundle:Default:inscription }
+train_core_adminpanel:
+    path:     /admin
+    defaults: { _controller: TrainCoreBundle:Default:admin }
+train_core_search:
+    path:     /search
+    defaults: { _controller: TrainCoreBundle:Default:search }
+train_core_admin_view:
+    path:     /admin_view
+    defaults: { _controller: TrainCoreBundle:Default:admin_view }
+train_core_admin_create:
+    path:     /admin_create
+    defaults: { _controller: TrainCoreBundle:Default:admin_create }
+login:
+    pattern:   /login
+    defaults:  { _controller: TrainUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout

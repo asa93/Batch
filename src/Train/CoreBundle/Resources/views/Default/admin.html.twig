@@ -1,0 +1,93 @@
+{% extends 'TrainCoreBundle:Default:main-layout.html.twig' %}
+	{% block title %}
+	{% set title='iZi Train - Accueil' %}
+    <title>{{title}}</title>
+{%endblock%}
+{% block body %}
+	<div class="page-header">
+	<h2> Main Admin Panel - Bienvenue {{app.user.username}} </h2>
+	</div>
+	
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Gestion des voyages 
+  <a href="{{path('train_core_admin_create')}}" style="text-decoration:none;">
+  <span class="label label-warning ">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>
+  
+  Créer un voyage  </span></a>
+
+  </strong>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+	<tr style="font-weight:bold;">
+	<td>#Depart</td>
+	 <td>#Arrivée </td>
+	 <td>#Date départ </td>
+	 <td>#Voyageurs</td>
+	 <td>#Action</td>
+	
+	</tr>
+{% for voyage in voyages%}
+
+ <tr>
+ 
+
+	
+	 <td>{{voyage.depart|capitalize}} </td>
+	 <td>{{voyage.destination|capitalize}} </td>
+	 <td>
+		{% if voyage.getDateDiff().invert==1%}
+			{{voyage.getDateDiff().format('Dans %d jours, %H heures et %i minutes')}} .
+		{% else %}
+			{{voyage.getDateDiff().format('Il y a %d jours, %H heures et %i minutes')}}
+		{%endif%}
+	 
+	 </td>
+	 <td>{{voyage.nbBillets()}}</td>
+	   
+	<td> 
+
+		<div class="btn-group">
+						{# On change la couleur en fonction du voyage #}
+						{% if not (voyage.isComplet())%}
+						<button type="button" class="btn btn-default">En remplissage      </button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{% elseif voyage.isComplet() and not(voyage.isPaye()) %}			
+						<button type="button" class="btn btn-warning">Attente de paiment</button>
+						<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						
+						{% elseif voyage.isPaye() %}
+					  <button type="button" class="btn btn-danger">A payer                  </button>
+					  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												
+						{%endif%}
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <ul class="dropdown-menu">
+				<li><a href="{{path('train_core_admin_view',{'id':voyage.id})}}">Voir</a></li>
+				<li><a href="#">Contacter voyageurs</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			  </ul>
+		</div>
+
+				
+
+	</td>
+ 
+ 
+</tr>
+{%endfor%}
+
+</table>
+</div>
+	
+	
+	
+	
+{%endblock%}

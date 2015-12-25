@@ -1,0 +1,186 @@
+<?php
+
+namespace Train\CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Billet
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Train\CoreBundle\Entity\BilletRepository")
+ */
+class Billet
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prix", type="float")
+     */
+    private $prix;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="paye", type="boolean")
+     */
+    private $paye;
+
+	/**	
+     * @ORM\OneToOne(targetEntity="Train\CoreBundle\Entity\Voyageur", cascade={"persist"})
+     */
+	private $voyageur;
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="Train\CoreBundle\Entity\Voyage",cascade={"remove","persist"})
+	* @ORM\JoinColumn(nullable=false)
+	*/
+	private $voyage;
+	
+	
+	public function __construct($voyage, $voyageur, $paye=false){
+		
+		$this->paye=$paye;
+		$this->voyageur=$voyageur;
+		$this->voyage=$voyage;
+		
+		$statut=$voyageur->getStatut();
+		if($statut==Voyageur::BAMBIN){
+			$this->prix=$voyage->getPrixBambin();			
+		}
+		elseif($statut==Voyageur::ENFANT){
+			$this->prix=$voyage->getPrixEnfant();	
+		}
+		elseif($statut==Voyageur::JEUNE){
+			$this->prix=$voyage->getPrixJeune();			
+		}
+		else{
+			$this->prix=$voyage->getPrixAdulte();		
+		}
+		
+	}	
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param integer $prix
+     * @return Billet
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return integer 
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set paye
+     *
+     * @param boolean $paye
+     * @return Billet
+     */
+    public function setPaye($paye)
+    {
+        $this->paye = $paye;
+
+        return $this;
+    }
+
+    /**
+     * Get paye
+     *
+     * @return boolean 
+     */
+    public function getPaye()
+    {
+        return $this->paye;
+    }
+
+
+    /**
+     * Set voyageur
+     *
+     * @param \OC\PlatformBundle\Entity\Voyageur $voyageur
+     * @return Billet
+     */
+    public function setVoyageur(\OC\PlatformBundle\Entity\Voyageur $voyageur = null)
+    {
+        $this->voyageur = $voyageur;
+
+        return $this;
+    }
+
+    /**
+     * Get voyageur
+     *
+     * @return \OC\PlatformBundle\Entity\Voyageur 
+     */
+    public function getVoyageur()
+    {
+        return $this->voyageur;
+    }
+
+    /**
+     * Set voyage
+     *
+     * @param \Train\CoreBundle\Entity\Voyage $voyage
+     * @return Billet
+     */
+    public function setVoyage(\Train\CoreBundle\Entity\Voyage $voyage)
+    {
+        $this->voyage = $voyage;
+
+        return $this;
+    }
+
+    /**
+     * Get voyage
+     *
+     * @return \Train\CoreBundle\Entity\Voyage 
+     */
+    public function getVoyage()
+    {
+        return $this->voyage;
+    }
+	
+	 /**
+     * mailVoyageur
+     *
+     * @return \Train\CoreBundle\Entity\Voyage 
+     */
+    public function mailVoyageur()
+    {
+		mail( $this->getVoyageur()->getEmail() , 'Batch - Bonjour '.$this->getVoyageur()->getPrenom().
+		'voici votre reservation'
+		, 'Voici le lien de paiement pour votre billet: http://www.bitly.co.uk' );
+    }
+}

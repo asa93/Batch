@@ -1,0 +1,84 @@
+{% extends 'TrainCoreBundle:Default:main-layout.html.twig' %}
+
+{% block body%}
+	
+
+	<h3 class="page-header">  Création d'un voyage </h3>
+	
+	<div>
+		{% for label, flashes in app.session.flashbag.all %}
+    {% for flash in flashes %}
+		{% if label =="alert"%}
+       <div class="alert alert-danger col-md-9" role="alert">{{ flash }} <br /></div>
+	   {% elseif label =="notice"%}
+	   <div class="alert alert-success col-md-9" role="alert">{{ flash }} <br /></div>
+            {% endif %}
+     
+    {% endfor %}
+	<br /> <br /> <br />
+	{% endfor %}
+		
+	</div>
+	
+	<h2> <span class="glyphicon glyphicon-pencil"></span> Entrez les données du voyage </h2>
+
+	<div class="well">
+				<div class="row featurette">	
+		<div class="col-md-5">		
+		{{ form_start(form) }}
+    {{ form_errors(form) }}
+		
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.date)}}  </span>
+		
+					{{ form_widget(form.date.date, {'attr': {'class': 'form-control'}}) }}
+					{{ form_widget(form.date.time, {'attr': {'class': 'form-control'}}) }}					
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.depart)}}</span>
+		
+			{{ form_widget(form.depart, {'attr': {'class': 'form-control md-col-3'}}) }}
+		</div>
+
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.destination)}} </span>
+		
+		{{ form_widget(form.destination, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.prixBambin)}}   </span>
+		
+		{{ form_widget(form.prixBambin, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.prixEnfant)}}   </span>
+		
+		{{ form_widget(form.prixEnfant, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.prixJeune)}}   </span>
+		
+		{{ form_widget(form.prixJeune, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">{{form_label(form.prixAdulte)}}   </span>
+		
+		{{ form_widget(form.prixAdulte, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+
+{{ form_end(form) }}
+		</div>
+		</div>
+		</div>
+	
+	
+{% endblock %}

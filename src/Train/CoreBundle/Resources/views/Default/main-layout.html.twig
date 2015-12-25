@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="{{asset('bundles/train/pics/favicon.png')}}" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+	
+	{% block title %}
+
+	{%endblock%}
+	
+    <!-- Bootstrap core CSS -->
+    <link  rel="stylesheet" href="{{ asset('bundles/train/bootstrap/dist/css/bootstrap.min.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link  rel="stylesheet" href="{{ asset('bundles/train/bootstrap/less/jumbotron-narrow.less') }}">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body style="background-color:white;">
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+
+            <li role="presentation" class="active"><a href="{{path('train_core_homepage')}}">Accueil</a></li>
+			{% if is_granted('ROLE_USER')%}
+			<li role="presentation"><a href="#">Connecté en tant que {{app.user.username|capitalize }}</a></li>	
+			<li role="presentation"><a href="{{path('logout')}}">Se déconnecter</a></li>		
+			{% endif %}
+			<li role="presentation"><a href="#">Comment ça fonctionne?</a></li>
+            <li role="presentation"><a href="#">A propos</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><a href="{{path('train_core_homepage')}}">
+		<img src="{{ asset('bundles/train/bootstrap/pics/path2.png') }}" alt="Path" /></a></h3>
+      </div>
+	{% block body%}
+
+{% endblock %}
+      <footer class="footer">
+        <p>&copy; 2015 Slim&Théo, Ecole des Mines de Nantes</p>
+      </footer>
+
+    </div> <!-- /container -->
+	
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="{{ asset('bundles/train/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+
+  </body>
+  
+</html>

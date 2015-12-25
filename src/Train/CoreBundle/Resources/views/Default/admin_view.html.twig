@@ -1,0 +1,50 @@
+{% extends 'TrainCoreBundle:Default:main-layout.html.twig' %}
+
+{% block body %}
+	<div class="page-header">
+	<h2> Admin Panel</h2>
+	</div>
+{%if  voyage!=null %}
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Voyage de {{voyage.depart}} vers {{voyage.destination}} le {{voyage.date.format('Y-m-d')}}</strong></div>
+
+  <!-- Table -->
+  <table class="table">
+	<tr style="font-weight:bold;">
+	<td>#Nom</td>
+	 <td>#Prenom</td>
+	 <td>#Age </td>
+	 <td>#email</td>
+	 <td>#réglement</td>
+</tr>	 
+
+	 {% for billet in billets%}
+		 {% set voyageur=billet.getVoyageur() %}
+		 <tr>
+			<td>{{voyageur.nom}}</td>
+			 <td>{{voyageur.prenom}}</td>
+			 <td>{{voyageur.age}}</td>
+			 <td>{{voyageur.email}}</td>
+			 <td> {{billet.getPrix()}}€ 
+			 <em>{% if not billet.getPaye()%}
+				- impayé
+			 {%endif%}
+			 </em>
+			 </td>
+		 </tr>
+	 {% endfor%}
+	
+ 
+
+
+
+</table>
+</div>
+{% else %}
+<p> désolé il n'y a pas de résultat..</p>
+{%endif%}
+	
+	
+	
+{%endblock%}

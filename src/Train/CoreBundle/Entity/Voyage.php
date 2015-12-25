@@ -1,0 +1,430 @@
+<?php
+
+namespace Train\CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Voyage
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Train\CoreBundle\Entity\VoyageRepository")
+ */
+class Voyage
+{
+
+	 /**
+     * @var integer
+     */
+	 const MAX_BILLETS=10;
+	 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+	
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="destination", type="string", length=255)
+     */
+    private $destination;
+
+    /**
+     * @var \stdClass
+     *
+     * @ORM\OneToMany(targetEntity="Train\CoreBundle\Entity\Billet", mappedBy="voyage",cascade={"remove","persist"})
+     */
+	 private $billets;
+	 
+	/**
+	* @var prixAdulte
+	*
+	*@ORM\Column(name="prixAdulte", type="integer")
+	*/
+	private $prixAdulte;
+
+	/**
+	* @var prixEnfant
+	*
+	*@ORM\Column(name="prixEnfant", type="float")
+	*/	
+	private $prixEnfant;	
+
+	/**
+	* @var prixJeune
+	*
+	*@ORM\Column(name="prixJeune", type="float")
+	*/	
+	private $prixJeune;	
+
+	/**
+	* @var prixBambin
+	*
+	*@ORM\Column(name="prixBambin", type="float")
+	*/	
+	private $prixBambin;		
+	
+	
+	
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="depart", type="string", length=255)
+     */
+    private $depart;
+	
+	public function __construct($dest='', $dep='', $prixBambin=0,$prixEnfant=0,$prixAdulte=0,$prixJeune=0, $d=0, $b=null){
+		$this->destination=$dest;
+		$this->depart=$dep;
+		$this->date=new \Datetime();
+		$this->billets=$b;
+		$this->complet=false;
+		$this->prixBambin=$prixBambin;
+		$this->prixEnfant=$prixEnfant;
+		$this->prixJeune=$prixJeune;
+		$this->prixAdulte=$prixAdulte;
+		
+	
+	}
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Voyage
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+    /**
+     * Get dateDiff
+     *
+     * @return \DateTime 
+     */
+    public function getDateDiff()
+    {
+        return $this->date->diff(new \DateTime());
+    }
+    /**
+     * Set destination
+     *
+     * @param string $destination
+     * @return Voyage
+     */
+    public function setDestination($destination)
+    {
+        $this->destination = $destination;
+
+        return $this;
+    }
+
+    /**
+     * Get destination
+     *
+     * @return string 
+     */
+    public function getDestination()
+    {
+        return $this->destination;
+    }
+
+
+    /**
+     * Set depart
+     *
+     * @param string $depart
+     * @return Voyage
+     */
+    public function setDepart($depart)
+    {
+        $this->depart = $depart;
+
+        return $this;
+    }
+
+    /**
+     * Get depart
+     *
+     * @return string 
+     */
+    public function getDepart()
+    {
+        return $this->depart;
+    }
+	
+	 /**
+     * nbVoyageurs
+     *
+     * @return integer 
+     */
+	 public function nbBillets(){
+		
+		 return count($this->getBillets()); 
+	 }
+	 /**
+     * callVoyageurs
+     *
+     *
+     */
+	 public function callVoyageurs(){
+
+		 foreach($this->getBillets() as $billet){
+			 $billet->mailVoyageur();
+		 }
+		 
+	 }
+
+	 /**
+     * isComplet
+     *
+     * @return boolean 
+     */
+	    public function isComplet()
+    {
+        return $this->nbBillets()==10;
+    }
+		 /**
+     * isParti
+     *
+     * @return boolean 
+     */
+	    public function isParti()
+    {
+        return $this->getDate()< (new \DateTime());
+    }
+
+    /**
+     * Is paye
+     *
+     * @return boolean 
+     */
+    public function isPaye()
+    {
+		$paye=true;
+		foreach($this->getBillets() as $billet){
+			$paye=($paye && $billet->getPaye());
+			
+		}
+        return $paye;
+    }
+    /**
+     * Add billets
+     *
+     * @param \Train\CoreBundle\Entity\Billet $billets
+     * @return Voyage
+     */
+    public function addBillet(\Train\CoreBundle\Entity\Billet $billets)
+    {
+		if($this->nbBillets()<MAX_BILLETS){
+			$this->billets[] = $billets;
+			if($this->nbBillets()==MAX_BILLETS){
+				//Lorsque le groupe est complet on envoie un mail pour faire payer les gens
+				foreach($this->getBillets() as $billets){
+					$billet->mailVoyageur();					
+				}
+			}
+		}
+
+        return $this;
+    }
+
+    /**
+     * Remove billets
+     *
+     * @param \Train\CoreBundle\Entity\Billet $billets
+     */
+    public function removeBillet(\Train\CoreBundle\Entity\Billet $billets)
+    {
+        $this->billets->removeElement($billets);
+    }
+
+    /**
+     * Get billets
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBillets()
+    {
+        return $this->billets;
+    }
+	 /**
+     * Get voyageurs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVoyageurs()
+    {	
+		$voyageurs =null;
+		foreach($this->getBillets() as $billet){
+			$voyageurs[] = $billet->getVoyageur();
+		}
+        return $voyageurs;
+    }
+
+    /**
+     * Set prixAdulte
+     *
+     * @param integer $prixAdulte
+     * @return Voyage
+     */
+    public function setPrixAdulte($prixAdulte)
+    {
+        $this->prixAdulte = $prixAdulte;
+
+        return $this;
+    }
+
+    /**
+     * Get prixAdulte
+     *
+     * @return integer 
+     */
+    public function getPrixAdulte()
+    {
+        return $this->prixAdulte;
+    }
+
+    /**
+     * Set prixEnfant
+     *
+     * @param integer $prixEnfant
+     * @return Voyage
+     */
+    public function setPrixEnfant($prixEnfant)
+    {
+        $this->prixEnfant = $prixEnfant;
+
+        return $this;
+    }
+
+    /**
+     * Get prixEnfant
+     *
+     * @return integer 
+     */
+    public function getPrixEnfant()
+    {
+        return $this->prixEnfant;
+    }
+
+    /**
+     * Set prixJeune
+     *
+     * @param integer $prixJeune
+     * @return Voyage
+     */
+    public function setPrixJeune($prixJeune)
+    {
+        $this->prixJeune = $prixJeune;
+
+        return $this;
+    }
+
+    /**
+     * Get prixJeune
+     *
+     * @return integer 
+     */
+    public function getPrixJeune()
+    {
+        return $this->prixJeune;
+    }
+
+
+    /**
+     * Set prixBambin
+     *
+     * @param integer $prixBambin
+     * @return Voyage
+     */
+    public function setPrixBambin($prixBambin)
+    {
+        $this->prixBambin = $prixBambin;
+
+        return $this;
+    }
+
+    /**
+     * Get prixBambin
+     *
+     * @return integer 
+     */
+    public function getPrixBambin()
+    {
+        return $this->prixBambin;
+    }
+	    /**
+     * findVoyageur
+     *
+     * @return boolean 
+     */
+	public function findVoyageur($email,$nom=null,$prenom=null,$id=null){
+		$res=false;
+		foreach($this->getBillets() as $billet){
+			if($billet->getVoyageur()->getEmail()==$email){
+				$res=true;
+			}
+		}
+		return $res;
+		
+	}
+
+
+    /**
+     * Set prix
+     *
+     * @param array $prix
+     * @return Voyage
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return array 
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+}

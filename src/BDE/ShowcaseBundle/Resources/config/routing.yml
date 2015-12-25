@@ -1,0 +1,19 @@
+﻿bde_showcase_homepage:
+    path:    /home
+    defaults: { _controller: BDEShowcaseBundle:Default:index}
+    
+bde_showcase_associations:
+    path:    /associations
+    defaults: {_controller: BDEShowcaseBundle:Default:associations}
+
+bde_showcase_home:
+    path:    /home
+    defaults: {_controller: BDEShowcaseBundle:Default:index}
+
+bde_showcase_contact:
+    path: /contacts
+    defaults: {_controller: BDEShowcaseBundle:Default:contact}
+
+bde_showcase_equipe:
+    path: /equipe-bde
+    defaults: {_controller: BDEShowcaseBundle:Default:equipe}

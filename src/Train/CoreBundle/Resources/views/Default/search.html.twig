@@ -1,0 +1,40 @@
+{% extends 'TrainCoreBundle:Default:main-layout.html.twig' %}
+
+{% block body%}
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Trajet {{depart|upper}} - {{destination|upper}}</strong></div>
+
+  <!-- Table -->
+  <table class="table">
+	
+{% for voyage in voyages%}
+
+ <tr>
+ 
+
+
+	
+	 <td>Depart de {{voyage.depart}} </td>
+	 <td>Arrivée à {{voyage.destination}} </td>
+	 <td>le {{voyage.date.format('d-m-Y')}} . </td>
+	 <td>Places libres <span class="badge">{{10-voyage.nbBillets()}}</span></td>
+	   
+	   {% if not (voyage.isComplet())%}
+		<td> <a style="text-decoration:none;" href="{{path('train_core_inscription',{'id':voyage.id})}}" >
+		<span class="label label-success">réserver</span></a></td>
+	 {%else%} 
+		<td><span class="label label-danger">complet</span></td>
+	 {%endif%}
+	
+
+	  
+
+</tr>
+{%endfor%}
+
+</ul>
+	  </table>
+</div>
+	
+{% endblock %}
